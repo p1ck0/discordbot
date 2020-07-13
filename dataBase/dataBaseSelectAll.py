@@ -1,9 +1,13 @@
 import sqlite3
 
 
-def dataBaseSelectAll(path):
-    conn = sqlite3.connect(path)
+def dataBaseSelectAll(ServerID):
+    message = list()
+    conn = sqlite3.connect(f"database/{ServerID}.db")
     cursor = conn.cursor()
-    sql = "SELECT * FROM Message"
-    cursor.execute(sql)
-    return cursor.fetchall()
+    cursor.execute("SELECT * FROM Server")
+    for i in cursor.fetchall():
+        message.append(i[1])
+    return message
+
+print(dataBaseSelectAll("672131397015699498"))
