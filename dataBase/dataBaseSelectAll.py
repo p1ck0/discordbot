@@ -9,5 +9,3 @@ def dataBaseSelectAll(ServerID):
     for i in cursor.fetchall():
         message.append(i[1])
     return message
-
-print(dataBaseSelectAll("672131397015699498"))
