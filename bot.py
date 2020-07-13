@@ -30,12 +30,7 @@ class Bot(discord.Client):
             else:
                 await message.channel.send(self.result)
 '''
-'''
-        if len(self.message_list) % 50 == 0:
-            for msg in self.message_list:
-                Insert(msg, self.guilds["id"])
-            print('засейвил')
-'''
+
 
 bot = Bot()
 
